@@ -16,8 +16,8 @@ function App() {
           <Form />
           <CurrentWeather />
           <UvIndex />
-          {/* <Forecast />
           <Forecast />
+          {/* <Forecast />
           <Forecast />
           <Forecast />
           <Forecast /> */}

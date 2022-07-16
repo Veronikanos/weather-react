@@ -1,28 +1,20 @@
 import React, { useState } from "react";
 import "./Form.css";
-import Axios from "axios";
+import axios from "axios";
 
 export default function Form() {
 
-  let [city, setCity] = useState("");
-
-  function handleSubmit(event) {
-    event.preventDefault();
-    setCity(city);
-  }
-
   return (
 		<div className="Form">
-    <form id="search_city_form" onSubmit={handleSubmit}>
+    <form>
       <div className="row form_text">
         <div className="col-2">
           <button
             className="col-12 btn shadow button_input"
             data-bs-toggle="tooltip"
             data-bs-placement="bottom"
-            data-bs-custom-className="custom-tooltip"
+            // data-bs-custom-classname="custom-tooltip"
             title="Current location weather"
-            id="home_button"
             type="button"
           >
             <i className="fa-solid fa-house-user" />

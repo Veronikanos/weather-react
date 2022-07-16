@@ -5,11 +5,12 @@ import UvIndex from "./UvIndex";
 import Forecast from "./Forecast";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+import "./App.css";
+
 function App() {
 	return (
     <div>
-      <video autoPlay muted loop id="myVideo">
-        <source src="./video/Raindrops on tree branches.mp4" type="video/mp4" />
+      <video autoPlay muted loop id="myVideo"><source src="./video/Raindrops on tree branches.mp4" type="video/mp4" />
       </video>
       <div className="container">
         <div className="main_block">

@@ -1,0 +1,15 @@
+.UvIndex .current_day_uvi {
+	width: 80%;
+	margin: 0 auto;
+}
+
+.UvIndex #uv_index img,
+.UvIndex #max_uv_index img,
+li img{
+	width: 10%;
+}
+
+.UvIndex .uv img{
+	align-self: center;
+	width: 30%;
+}

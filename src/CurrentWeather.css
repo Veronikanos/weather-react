@@ -1,0 +1,85 @@
+.CurrentWeather .change_units{
+	text-shadow: 3px 2px 3px rgb(30, 30, 31);
+}
+
+.CurrentWeather h1{
+	padding-top: 7%;
+}
+
+.CurrentWeather .list,
+.CurrentWeather .status_weather > h4{
+	padding: 0;
+	margin: 0;
+}
+
+.CurrentWeather .current_day {
+	width: 80%;
+	margin: 0 auto;
+}
+
+.CurrentWeather .pictures_weather{
+	position: relative;
+	margin: 0;
+}
+
+.CurrentWeather .temperature{
+	align-items:flex-start;
+}
+
+.CurrentWeather .padding_block_top{
+	padding-top: 3%;
+	align-items: flex-end;
+}
+
+.CurrentWeather .change_units{
+	position: relative;
+	top: 1.5vh;
+	font-size: 2vh;
+	padding-left: 1vh;
+}
+
+.CurrentWeather .max_min{
+	color: var(--color-text);
+	text-shadow: 1px 0 1px rgba(0, 0, 0, 0.511), 
+	0 1px 1px rgba(0, 0, 0, 0.511),  
+	-1px 0 1px rgba(0, 0, 0, 0.511), 
+	0 -1px 1px rgba(0, 0, 0, 0.511);
+	display: flex;
+}
+
+.CurrentWeather .max_min div{
+	justify-content: space-between;
+	flex: 1;
+}
+
+.CurrentWeather .temperature_block{
+	display: inline-flex;
+}
+
+.CurrentWeather .header1,
+.CurrentWeather .temperature,
+.CurrentWeather .header3, 
+.CurrentWeather .image_icon{
+	color: var(--color-text);
+	text-shadow: 2px 1px 4px rgb(30, 30, 31);
+}
+
+.CurrentWeather #icon{
+	width: 60%;
+}
+
+.CurrentWeather .last_updated{
+	text-shadow: var(--shadow-text);
+}
+
+@media (max-width: 1000px) {
+	.CurrentWeather .change_units{
+		top: 1.3vh;
+	}
+}
+
+@media (max-width: 800px) {
+	.CurrentWeather .change_units{
+		top: 1.1vh;
+	}
+}

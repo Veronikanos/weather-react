@@ -1,4 +1,6 @@
 import React from "react";
+import "./CurrentWeather.css";
+import Axios from "axios";
 
 export default function CurrentWeather() {
   let weatherData = {
@@ -14,7 +16,7 @@ export default function CurrentWeather() {
     precipitation: 70
   };
   return (
-    <div className="current_info shadow">
+    <div className="current_info shadow CurrentWeather">
       <div className="current_day">
         <h1 className="header1 text-center fw-normal">
           {weatherData.city}, {weatherData.country}
@@ -32,7 +34,7 @@ export default function CurrentWeather() {
           </div>
           <div className="col-6 temperature_block flex-column left_padding">
             <div className="temperature display-4 fw-normal d-flex">
-              10
+              <span>10</span>
               <span className="active change_units">°C</span>
             </div>
             <div className="max_min">

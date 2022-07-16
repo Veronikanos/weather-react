@@ -1,9 +1,10 @@
 import React from "react";
+import "./UvIndex.css";
 
 export default function UvIndex() {
   return (
-    <div className="main_block current_info p-2">
-      <div className="current_day">
+    <div className="main_block current_info p-2 UvIndex">
+      <div className="current_day_uvi">
         <div className="row uvi">
           <div className="col-6 uv">
             UV index:

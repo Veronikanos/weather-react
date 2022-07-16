@@ -1,6 +1,9 @@
 import React, { useState } from "react";
+import "./Form.css";
+import Axios from "axios";
 
 export default function Form() {
+
   let [city, setCity] = useState("");
 
   function handleSubmit(event) {
@@ -9,6 +12,7 @@ export default function Form() {
   }
 
   return (
+		<div className="Form">
     <form id="search_city_form" onSubmit={handleSubmit}>
       <div className="row form_text">
         <div className="col-2">
@@ -21,7 +25,7 @@ export default function Form() {
             id="home_button"
             type="button"
           >
-            <i className="fa-solid fa-house-user"></i>
+            <i className="fa-solid fa-house-user" />
           </button>
         </div>
         <div className="col-7">
@@ -43,5 +47,6 @@ export default function Form() {
         </div>
       </div>
     </form>
+		</div>
   );
 }

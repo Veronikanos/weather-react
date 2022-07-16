@@ -68,7 +68,7 @@
 	width: 60%;
 }
 
-.CurrentWeather .last_updated{
+.DateTime .last_updated{
 	text-shadow: var(--shadow-text);
 }
 

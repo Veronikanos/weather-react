@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import "./CurrentWeather.css";
+import DateTime from "./DateTime";
 import axios from "axios";
 
 export default function CurrentWeather() {
@@ -12,7 +13,9 @@ export default function CurrentWeather() {
 			ready: true,
 			city: response.data.name,
 			country: response.data.sys.country,
-			date: "Wednesday 10:00",
+			temperature: Math.round(Number(response.data.wind.speed) * 3.6),
+			// date: "Wednesday 10:00", 
+			date: new Date(response.data.dt * 1000),
 			description: response.data.weather[0].description,
 			icon: `icons/${response.data.weather[0].icon}.svg`,
 			humidity: response.data.main.humidity,
@@ -30,9 +33,7 @@ export default function CurrentWeather() {
 					<h1 className="header1 text-center fw-normal">
 						{weatherData.city}, {weatherData.country}
 					</h1>
-					<h6 className="text-center last_updated">
-						Last updated: {weatherData.date}
-					</h6>
+					<DateTime data={weatherData.date}/>
 					<div className="row padding_block_top">
 						<div className="col-6 left_padding">
 							<ul className="list list-unstyled">
@@ -43,7 +44,7 @@ export default function CurrentWeather() {
 						</div>
 						<div className="col-6 temperature_block flex-column left_padding">
 							<div className="temperature display-4 fw-normal d-flex">
-								<span>10</span>
+								{weatherData.temperature}
 								<span className="active change_units">°C</span>
 							</div>
 							<div className="max_min">

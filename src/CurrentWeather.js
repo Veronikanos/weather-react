@@ -8,18 +8,18 @@ export default function CurrentWeather() {
 
 	function showCurrentWeather(response){
 
-		console.log(response);
+		// console.log(response);
 		setWeatherData({
 			ready: true,
 			city: response.data.name,
 			country: response.data.sys.country,
-			temperature: Math.round(Number(response.data.wind.speed) * 3.6),
+			temperature: Math.round(response.data.main.temp),
 			// date: "Wednesday 10:00", 
 			date: new Date(response.data.dt * 1000),
 			description: response.data.weather[0].description,
 			icon: `icons/${response.data.weather[0].icon}.svg`,
 			humidity: response.data.main.humidity,
-			wind: response.data.wind.speed,
+			wind: Math.round(Number(response.data.wind.speed) * 3.6),
 			precipitation: 70,
 			max: 30,
 			min: 15,

@@ -4,9 +4,18 @@ import axios from "axios";
 
 export default function Form() {
 
+	// function handleSubmit(event){
+	// 	event.preventDefault();
+	// }
+
+	// function handleCity(event){
+	// 	event.preventDefault();
+	// 	// const city = event.target.value;
+	// }
+
   return (
 		<div className="Form">
-    <form>
+    <form >
       <div className="row form_text">
         <div className="col-2">
           <button
@@ -22,7 +31,7 @@ export default function Form() {
         </div>
         <div className="col-7">
           <input
-            // onChange={}
+            // onChange={handleCity}
             type="search"
             autoFocus="on"
             autoComplete="off"

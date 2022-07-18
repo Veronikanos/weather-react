@@ -1,6 +1,6 @@
 import React from "react";
 import Form from "./Form";
-import CurrentWeather from "./CurrentWeather";
+// import CurrentWeather from "./CurrentWeather";
 import UvIndex from "./UvIndex";
 import Forecast from "./Forecast";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -15,7 +15,7 @@ function App() {
       <div className="container">
         <div className="main_block">
           <Form />
-          <CurrentWeather />
+          {/* <CurrentWeather /> */}
           <UvIndex />
           <Forecast />
           {/* <Forecast />

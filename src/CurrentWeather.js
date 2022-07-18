@@ -1,74 +1,51 @@
-import React, {useState} from "react";
+import React from "react";
 import "./CurrentWeather.css";
 import DateTime from "./DateTime";
-import axios from "axios";
+// import axios from "axios";
 
-export default function CurrentWeather() {
-	const [weatherData, setWeatherData] = useState({ready: false});
+export default function CurrentWeather(props) {
 
-	function showCurrentWeather(response){
-
-		// console.log(response);
-		setWeatherData({
-			ready: true,
-			city: response.data.name,
-			country: response.data.sys.country,
-			temperature: Math.round(response.data.main.temp),
-			// date: "Wednesday 10:00", 
-			date: new Date(response.data.dt * 1000),
-			description: response.data.weather[0].description,
-			icon: `icons/${response.data.weather[0].icon}.svg`,
-			humidity: response.data.main.humidity,
-			wind: Math.round(Number(response.data.wind.speed) * 3.6),
-			precipitation: 70,
-			max: 30,
-			min: 15,
-		});
-	}
-
-	if (weatherData.ready){
+	if (props.objData.ready){
 		return (
 			<div className="current_info shadow CurrentWeather">
 				<div className="current_day">
 					<h1 className="header1 text-center fw-normal">
-						{weatherData.city}, {weatherData.country}
+						{props.objData.city}, {props.objData.country}
 					</h1>
-					<DateTime data={weatherData.date}/>
+					<DateTime data={props.objData.date}/>
 					<div className="row padding_block_top">
 						<div className="col-6 left_padding">
 							<ul className="list list-unstyled">
-								<li>Humidity: {weatherData.humidity}%</li>
-								<li>Wind: {weatherData.wind} km/h</li>
-								<li>Precipitation: {weatherData.precipitation}%</li>
+								<li>Humidity: {props.objData.humidity}%</li>
+								<li>Wind: {props.objData.wind} km/h</li>
+								<li>Precipitation: {props.objData.precipitation}%</li>
 							</ul>
 						</div>
 						<div className="col-6 temperature_block flex-column left_padding">
 							<div className="temperature display-4 fw-normal d-flex">
-								{weatherData.temperature}
+								{props.objData.temperature}
 								<span className="active change_units">°C</span>
 							</div>
 							<div className="max_min">
-								<div>Max: {weatherData.max}°</div>
-								<div>Min: {weatherData.min}°</div>
+								<div>Max: {props.objData.max}°</div>
+								<div>Min: {props.objData.min}°</div>
 							</div>
 						</div>
 					</div>
 					<div className="row">
 						<div className="col-6 d-flex align-items-center left_padding">
-							<img src={weatherData.icon} alt="" id="icon" />
+							<img src={props.objData.icon} alt="" id="icon" />
 						</div>
 						<div className="col-6 d-flex align-items-center status_weather left_padding">
-							<h4 className="header3">{weatherData.description}</h4>
+							<h4 className="header3">{props.objData.description}</h4>
 						</div>
 					</div>
 				</div>
 			</div>
 		);
 	} else {
-		const apiKey = "0f146129869d8f01315497362c4058ae";
-		const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Kyiv&appid=${apiKey}&units=metric`;
-		axios.get(apiUrl).then(showCurrentWeather);
-		return ("Loading...");
+		return (<h1 className="CurrentWeather current_day text-white">Type a city into the form!</h1>);
+		// TODO: need to add npm loader here
 	}
 }
 

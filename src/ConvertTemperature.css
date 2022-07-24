@@ -1,0 +1,46 @@
+.ConvertTemperature .temperature_block{
+	display: inline-flex;
+}
+
+.ConvertTemperature .temperature{
+	line-height: 1;
+}
+
+.ConvertTemperature .temperature {
+	color: var(--color-text);
+	text-shadow: 2px 1px 4px rgb(30, 30, 31);
+}
+
+.ConvertTemperature .change_units{
+	text-shadow: 3px 2px 3px rgb(30, 30, 31);
+	position: relative;
+	top: 5px;
+	font-size: 20px;
+	line-height: 1;
+	padding-left: 1vw;
+}
+
+.ConvertTemperature .change_units a{
+	text-decoration: none;
+	color: rgb(3, 7, 192);
+	text-shadow: 1px 0px 5px rgb(163, 162, 162);
+}
+
+.ConvertTemperature .max_min{
+	color: var(--color-text);
+	text-shadow: 1px 0 1px rgba(0, 0, 0, 0.511), 
+	0 1px 1px rgba(0, 0, 0, 0.511),  
+	-1px 0 1px rgba(0, 0, 0, 0.511), 
+	0 -1px 1px rgba(0, 0, 0, 0.511);
+	display: inline-flex;
+}
+
+@media (max-width: 450px) {
+	.ConvertTemperature .dergees{
+		font-size: 40px;
+	}
+	.ConvertTemperature .change_units{
+		top: 3px;
+		font-size: 15px;
+	}
+}

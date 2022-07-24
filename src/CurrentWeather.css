@@ -1,7 +1,3 @@
-.CurrentWeather .change_units{
-	text-shadow: 3px 2px 3px rgb(30, 30, 31);
-}
-
 .CurrentWeather h1{
 	padding-top: 7%;
 }
@@ -31,37 +27,11 @@
 	align-items: flex-end;
 }
 
-.CurrentWeather .change_units{
-	position: relative;
-	top: 5px;
-	font-size: 20px;
-	line-height: 1;
-	padding-left: 1vw;
-}
-
-.CurrentWeather .max_min{
-	color: var(--color-text);
-	text-shadow: 1px 0 1px rgba(0, 0, 0, 0.511), 
-	0 1px 1px rgba(0, 0, 0, 0.511),  
-	-1px 0 1px rgba(0, 0, 0, 0.511), 
-	0 -1px 1px rgba(0, 0, 0, 0.511);
-	display: inline-flex;
-}
-
-.CurrentWeather .temperature_block{
-	display: inline-flex;
-}
-
 .CurrentWeather .header1,
-.CurrentWeather .temperature,
 .CurrentWeather .header3, 
 .CurrentWeather .image_icon{
 	color: var(--color-text);
 	text-shadow: 2px 1px 4px rgb(30, 30, 31);
-}
-
-.CurrentWeather .temperature{
-	line-height: 1;
 }
 
 .CurrentWeather #icon{
@@ -70,14 +40,4 @@
 
 .DateTime .last_updated{
 	text-shadow: var(--shadow-text);
-}
-
-@media (max-width: 450px) {
-	.CurrentWeather .dergees{
-		font-size: 40px;
-	}
-	.CurrentWeather .change_units{
-		top: 3px;
-		font-size: 15px;
-	}
 }

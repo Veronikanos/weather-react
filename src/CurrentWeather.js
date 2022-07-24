@@ -1,6 +1,7 @@
 import React from "react";
 import "./CurrentWeather.css";
 import DateTime from "./DateTime";
+import ConvertTemperature from "./ConvertTemperature";
 // import axios from "axios";
 
 export default function CurrentWeather(props) {
@@ -9,9 +10,7 @@ export default function CurrentWeather(props) {
 		return (
 			<div className="current_info shadow CurrentWeather">
 				<div className="current_day">
-					<h1 className="header1 text-center fw-normal">
-						{props.objData.city}, {props.objData.country}
-					</h1>
+					<h1 className="header1 text-center fw-normal">{props.objData.city}, {props.objData.country}</h1>
 					<DateTime data={props.objData.date}/>
 					<div className="row padding_block_top">
 						<div className="col-6 left_padding align-content-center">
@@ -21,16 +20,7 @@ export default function CurrentWeather(props) {
 								<li>Precipitation: {props.objData.precipitation}%</li>
 							</ul>
 						</div>
-						<div className="col-6 temperature_block flex-column left_padding">
-							<div className="temperature fw-normal">
-								<span className="dergees align-top">{props.objData.temperature}</span>
-								<span className="change_units align-top">°C</span>
-							</div>
-							<div className="max_min">
-								<div>Max: {props.objData.max}°</div>
-								<div class="ms-2">Min: {props.objData.min}°</div>
-							</div>
-						</div>
+						<ConvertTemperature data={props.objData}/>
 					</div>
 					<div className="row">
 						<div className="col-6 d-flex align-items-center left_padding">

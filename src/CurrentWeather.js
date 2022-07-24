@@ -14,7 +14,7 @@ export default function CurrentWeather(props) {
 					</h1>
 					<DateTime data={props.objData.date}/>
 					<div className="row padding_block_top">
-						<div className="col-6 left_padding">
+						<div className="col-6 left_padding align-content-center">
 							<ul className="list list-unstyled">
 								<li>Humidity: {props.objData.humidity}%</li>
 								<li>Wind: {props.objData.wind} km/h</li>
@@ -22,13 +22,13 @@ export default function CurrentWeather(props) {
 							</ul>
 						</div>
 						<div className="col-6 temperature_block flex-column left_padding">
-							<div className="temperature display-4 fw-normal d-flex">
-								{props.objData.temperature}
-								<span className="active change_units">°C</span>
+							<div className="temperature fw-normal">
+								<span className="dergees align-top">{props.objData.temperature}</span>
+								<span className="change_units align-top">°C</span>
 							</div>
 							<div className="max_min">
 								<div>Max: {props.objData.max}°</div>
-								<div>Min: {props.objData.min}°</div>
+								<div class="ms-2">Min: {props.objData.min}°</div>
 							</div>
 						</div>
 					</div>
@@ -44,7 +44,13 @@ export default function CurrentWeather(props) {
 			</div>
 		);
 	} else {
-		return (<h1 className="CurrentWeather current_day text-white">Type a city into the form!</h1>);
+		return (
+		<div className="current_info shadow CurrentWeather">
+			<div className="current_day">
+				<h1 className="text-white text-center">Type a city into the form!</h1>
+			</div>
+		</div>
+	);
 		// TODO: need to add npm loader here
 	}
 }

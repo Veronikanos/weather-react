@@ -16,7 +16,7 @@ export default function ConvertTemperature(props){
 			<div className="col-6 temperature_block flex-column left_padding ConvertTemperature">
 			<div className="temperature fw-normal">
 				<span className="dergees align-top">{props.data.temperature}</span>
-				<span className="change_units align-top">°C | <a href="#" onClick={convertToFahrenheit}>°F</a></span>
+				<span className="change_units align-top">°C | <a href="/#" onClick={convertToFahrenheit}>°F</a></span>
 			</div>
 			<div className="max_min">
 				<div>Max: {props.data.max}°</div>
@@ -29,7 +29,7 @@ export default function ConvertTemperature(props){
 		<div className="col-6 temperature_block flex-column left_padding ConvertTemperature">
 			<div className="temperature fw-normal">
 				<span className="dergees align-top">{Math.round(props.data.temperature * 9/5 + 32)}</span>
-				<span className="change_units align-top"><a href="#" onClick={convertToCelsius}>°C</a> | °F</span>
+				<span className="change_units align-top"><a href="/#" onClick={convertToCelsius}>°C</a> | °F</span>
 			</div>
 			<div className="max_min">
 				<div>Max: {Math.round(props.data.max * 9/5 + 32)}°</div>

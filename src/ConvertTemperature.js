@@ -20,7 +20,7 @@ export default function ConvertTemperature(props){
 			</div>
 			<div className="max_min">
 				<div>Max: {props.data.max}°</div>
-				<div class="ms-2">Min: {props.data.min}°</div>
+				<div className="ms-2">Min: {props.data.min}°</div>
 			</div>
 		</div>
 		);
@@ -33,7 +33,7 @@ export default function ConvertTemperature(props){
 			</div>
 			<div className="max_min">
 				<div>Max: {Math.round(props.data.max * 9/5 + 32)}°</div>
-				<div class="ms-2">Min: {Math.round(props.data.min * 9/5 + 32)}°</div>
+				<div className="ms-2">Min: {Math.round(props.data.min * 9/5 + 32)}°</div>
 			</div>
 		</div>
 		)

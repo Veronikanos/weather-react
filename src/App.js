@@ -1,8 +1,6 @@
 import React from "react";
-import Form from "./Form";
-// import CurrentWeather from "./CurrentWeather";
+import Weather from "./Weather";
 import UvIndex from "./UvIndex";
-import Forecast from "./Forecast";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import "./App.css";
@@ -14,14 +12,9 @@ function App() {
       </video>
       <div className="container">
         <div className="main_block">
-          <Form />
+          <Weather defaultCity="Kyiv"/>
           {/* <CurrentWeather /> */}
           <UvIndex />
-          <Forecast />
-          {/* <Forecast />
-          <Forecast />
-          <Forecast />
-          <Forecast /> */}
           <footer className="main_block p-sm-2 mt-5">
             <a href="https://github.com/Veronikanos/weather-react">
               Open-source code react-app

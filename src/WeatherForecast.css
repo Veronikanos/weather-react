@@ -1,0 +1,21 @@
+.WeatherForecast .forecast_temperature{
+	color: var(--color-text);
+	text-shadow: 2px 1px 4px rgb(30, 30, 31);
+}
+
+.WeatherForecast .forecast_week_day img{
+	width: 80%;
+}
+
+.WeatherForecast .weather_forecast{
+	margin: 2%;
+}
+
+.WeatherForecast .forecast_week_day{
+	padding-bottom: 7%;
+	text-align: center;
+}
+
+.WeatherForecast .forecast_week_day{
+	text-shadow: var(--shadow-text);
+}

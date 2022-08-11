@@ -1,6 +1,5 @@
 import React from "react";
 import Weather from "./Weather";
-import UvIndex from "./UvIndex";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import "./App.css";
@@ -13,8 +12,7 @@ function App() {
       <div className="container">
         <div className="main_block">
           <Weather defaultCity="Kyiv"/>
-          {/* <CurrentWeather /> */}
-          <UvIndex />
+          
           <footer className="main_block p-sm-2 mt-5">
             <a href="https://github.com/Veronikanos/weather-react">
               Open-source code react-app

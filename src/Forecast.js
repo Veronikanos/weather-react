@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import "./WeatherForecast.css";
 import UvIndex from "./UvIndex";
 import WeatherForecastDay from "./WeatherForecastDay";
@@ -7,19 +7,22 @@ import axios from "axios";
 export default function Forecast(props) {
 	const [loaded, setLoaded] = useState(false);
 	const [forecast, setForecast] = useState(null);
-	// const [uvi, setUvi] = useState(null);
+	const [uvi, setUvi] = useState(null);
 
 	function showForecast(response){
-		console.log(response);
 		setLoaded(true);
 		setForecast(response.data.daily);
-		// setUvi(response.data);
+		setUvi(response.data);
 	}
+
+	useEffect(() => {
+		setLoaded(false);
+	}, [props.coordinates]);
 
 	if (loaded){
 		return (
 			<div>
-				{/* <UvIndex uvi={uvi}/> */}
+				<UvIndex uvindex={uvi}/>
 				<div className="weather_forecast WeatherForecast row">
 					{forecast.map(function (dailyforecast, index) {
 						if (index > 0 && index < 6){

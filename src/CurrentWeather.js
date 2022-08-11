@@ -5,7 +5,6 @@ import ConvertTemperature from "./ConvertTemperature";
 // import axios from "axios";
 
 export default function CurrentWeather(props) {
-	// console.log(props.objData);
 	return (
 		<div className="current_info shadow CurrentWeather">
 			<div className="current_day">

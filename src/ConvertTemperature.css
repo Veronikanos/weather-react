@@ -22,8 +22,8 @@
 
 .ConvertTemperature .change_units a{
 	text-decoration: none;
-	color: rgb(45, 47, 129);
-	text-shadow: 1px 0px 5px rgb(163, 162, 162);
+	color: rgb(15, 1, 59);
+	text-shadow: 1px 0px 2px rgb(163, 162, 162);
 }
 
 .ConvertTemperature .max_min{

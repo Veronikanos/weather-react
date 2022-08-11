@@ -9,6 +9,7 @@ export default function Weather(props) {
 	const [weatherData, setWeatherData] = useState({ready: false});
 
 	function showCurrentWeather(response){
+		console.log(response);
 		setWeatherData({
 			ready: true,
 			city: response.data.name,
@@ -53,7 +54,7 @@ export default function Weather(props) {
 								className="col-12 btn shadow button_input"
 								data-bs-toggle="tooltip"
 								data-bs-placement="bottom"
-								// data-bs-custom-classname="custom-tooltip"
+								data-bs-custom-classname="custom-tooltip"
 								title="Current location weather"
 								type="button"
 							>

@@ -34,7 +34,7 @@
 	text-shadow: 2px 1px 4px rgb(30, 30, 31);
 }
 
-.CurrentWeather #icon{
+.CurrentWeather .icon{
 	width: 50%;
 }
 

@@ -2,7 +2,6 @@ import React from "react";
 import "./CurrentWeather.css";
 import DateTime from "./DateTime";
 import ConvertTemperature from "./ConvertTemperature";
-// import axios from "axios";
 
 export default function CurrentWeather(props) {
 	return (
@@ -22,7 +21,7 @@ export default function CurrentWeather(props) {
 				</div>
 				<div className="row">
 					<div className="col-6 d-flex align-items-center left_padding">
-						<img src={props.objData.icon} alt="" id="icon" />
+						<img src={props.objData.icon} alt={props.objData.description} className="icon" />
 					</div>
 					<div className="col-6 d-flex align-items-center status_weather left_padding">
 						<h4 className="header3">{props.objData.description}</h4>

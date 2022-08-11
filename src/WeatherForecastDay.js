@@ -12,7 +12,7 @@ export default function WeatherForecastDay(props){
 	return (
 		<div>
 			<div>{date()}</div>
-			<img src={icon} alt="cloudy" />
+			<img src={icon} alt={props.data.weather[0].description} />
 			<div className="forecast_temperature row">
 				<span>&#9650; {Math.round(props.data.temp.max)}°</span>
 				<span>&#9660; {Math.round(props.data.temp.min)}°</span>

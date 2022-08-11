@@ -18,11 +18,11 @@ export default function UvIndex(props) {
         <div className="row uvi">
           <div className="col-6 uv">
             UV index:
-            <img src={showUvi()} alt="" />
+            <img src={showUvi()} alt={props.uvindex.current.uvi} />
           </div>
           <div className="col-6 uv">
             Max UVI:
-            <img src={maxUvi()} alt="" />
+            <img src={maxUvi()} alt={props.uvindex.daily[0].uvi} />
           </div>
         </div>
       </div>

@@ -21,9 +21,9 @@ export default function Weather(props) {
 			icon: `icons/${response.data.weather[0].icon}.svg`,
 			humidity: response.data.main.humidity,
 			wind: Math.round(Number(response.data.wind.speed) * 3.6),
-			precipitation: 70,
-			max: 30,
-			min: 15,
+			precipitation: `-`,
+			max: `-`,
+			min: `-`
 		});
 	}
 
@@ -49,7 +49,7 @@ export default function Weather(props) {
 				<div className="Weather">
 				<form onSubmit={handleSubmit}>
 					<div className="row form_text">
-						<div className="col-2">
+						{/* <div className="col-2">
 							<button
 								className="col-12 btn shadow button_input"
 								data-bs-toggle="tooltip"
@@ -60,8 +60,8 @@ export default function Weather(props) {
 							>
 								<i className="fa-solid fa-house-user" />
 							</button>
-						</div>
-						<div className="col-7">
+						</div> */}
+						<div className="col-9">
 							<input
 								onChange={handleCity}
 								type="search"

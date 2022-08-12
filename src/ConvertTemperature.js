@@ -18,10 +18,10 @@ export default function ConvertTemperature(props){
 				<span className="dergees align-top">{props.data.temperature}</span>
 				<span className="change_units align-top">°C | <a href="/#" onClick={convertToFahrenheit}>°F</a></span>
 			</div>
-			<div className="max_min">
+			{/* <div className="max_min">
 				<div>Max: {props.data.max}°</div>
 				<div className="ms-2">Min: {props.data.min}°</div>
-			</div>
+			</div> */}
 		</div>
 		);
 	} else {
@@ -39,5 +39,3 @@ export default function ConvertTemperature(props){
 		)
 	}
 }
-
-// TODO: Something wrong with api response with min and max temperature, it shows same for different cities

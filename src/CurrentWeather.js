@@ -14,7 +14,7 @@ export default function CurrentWeather(props) {
 						<ul className="list list-unstyled">
 							<li>Humidity: {props.objData.humidity}%</li>
 							<li>Wind: {props.objData.wind} km/h</li>
-							<li>Precipitation: {props.objData.precipitation}%</li>
+							{/* <li>Precipitation: {props.objData.precipitation}%</li> */}
 						</ul>
 					</div>
 					<ConvertTemperature data={props.objData}/>

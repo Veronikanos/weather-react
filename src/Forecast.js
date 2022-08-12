@@ -25,7 +25,7 @@ export default function Forecast(props) {
 				<UvIndex uvindex={uvi}/>
 				<div className="weather_forecast WeatherForecast row">
 					{forecast.map(function (dailyforecast, index) {
-						if (index > 0 && index < 6) {
+						if (index < 5) {
 							return (
 							<div className="col-2 current_info forecast_week_day pt-2 pb-2" key={index}>
 								<WeatherForecastDay data={dailyforecast}/>

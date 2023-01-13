@@ -15,7 +15,7 @@ function App() {
       </video> */}
       <div className="container">
         <div className="main_block">
-          <Weather defaultCity="Kyiv" />
+          <Weather />
           <Footer />
         </div>
       </div>

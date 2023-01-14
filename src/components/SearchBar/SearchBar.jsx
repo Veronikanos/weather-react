@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
-import {search} from '../service/api';
+import './SearchBar.css';
+import {toast} from 'react-toastify';
 
 export const SearchBar = ({onSubmit}) => {
   const [value, setValue] = useState('');
@@ -13,21 +14,16 @@ export const SearchBar = ({onSubmit}) => {
     event.preventDefault();
     const normalizedQuery = value.trim().toLowerCase();
     if (!normalizedQuery) {
-      console.log('The query is empty! Try again.');
-      // toast.warning('The query is empty! Try again.');
+      toast.warning('The query is empty! Try again.');
       return;
     }
     onSubmit(normalizedQuery);
-    // const {data} = await search(city);
-    // // showCurrentWeather(data);
-    // console.log(data);
   }
 
   return (
     <div className="Weather">
-      <form onSubmit={handleSubmit}>
-        <div className="row form_text">
-          {/* <div className="col-2">
+      <form className="searchForm" onSubmit={handleSubmit}>
+        {/* <div className="col-2">
 				<button
 					className="col-12 btn shadow button_input"
 					data-bs-toggle="tooltip"
@@ -39,23 +35,20 @@ export const SearchBar = ({onSubmit}) => {
 					<i className="fa-solid fa-house-user" />
 				</button>
 			</div> */}
-          <div className="col-9">
-            <input
-              onChange={handleCity}
-              type="search"
-              autoFocus="on"
-              autoComplete="off"
-              className="col-12 form-control shadow form_input"
-              placeholder="Type city..."
-            />
-          </div>
-          <div className="col-3">
-            <button
-              className="col-12 btn shadow button_input"
-              type="submit">
-              Search
-            </button>
-          </div>
+        <div className="">
+          <input
+            onChange={handleCity}
+            type="search"
+            autoFocus="on"
+            autoComplete="off"
+            className=""
+            placeholder="Type city..."
+          />
+        </div>
+        <div className="">
+          <button className="" type="submit">
+            Search
+          </button>
         </div>
       </form>
     </div>

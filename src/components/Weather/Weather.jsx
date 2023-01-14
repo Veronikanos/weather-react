@@ -10,34 +10,41 @@ import './Weather.css';
 
 export default function Weather() {
   const [query, setQuery] = useState('');
-  // const [weatherData, setWeatherData] = useState({});
+  const [weatherData, setWeatherData] = useState(null);
 
-  // function showCurrentWeather(response) {
-  //   console.log(response);
-  //   // setWeatherData({
-  //   //   // ready: true,
-  //   //   city: response.data.name,
-  //   //   coords: response.data.coord,
-  //   //   country: new Intl.DisplayNames(['en'], {type: 'region'}).of(
-  //   //     response.data.sys.country
-  //   //   ),
-  //   //   temperature: Math.round(response.data.main.temp),
-  //   //   date: new Date(response.data.dt * 1000),
-  //   //   description: response.data.weather[0].description,
-  //   //   icon: `icons/${response.data.weather[0].icon}.svg`,
-  //   //   humidity: response.data.main.humidity,
-  //   //   wind: Math.round(Number(response.data.wind.speed) * 3.6),
-  //   //   precipitation: `-`,
-  //   //   max: `-`,
-  //   //   min: `-`,
-  //   // });
-  // }
+  function showCurrentWeather({
+    name,
+    coord,
+    sys,
+    main,
+    dt,
+    weather,
+    wind,
+  }) {
+    setWeatherData({
+      city: name,
+      coords: coord,
+      country: new Intl.DisplayNames(['en'], {type: 'region'}).of(
+        sys.country
+      ),
+      temperature: Math.round(main.temp),
+      date: new Date(dt * 1000),
+      description: weather[0].description,
+      icon: `icons/${weather[0].icon}.svg`,
+      humidity: main.humidity,
+      wind: Math.round(Number(wind.speed) * 3.6),
+      precipitation: `-`,
+      max: main.temp_max,
+      min: main.temp_min,
+    });
+  }
 
   useEffect(() => {
     const fetchCity = async () => {
       try {
         const {data} = await search(query);
         console.log(data);
+        showCurrentWeather(data);
       } catch (error) {
         console.log(error.message);
       }
@@ -53,9 +60,9 @@ export default function Weather() {
   return (
     <div>
       <SearchBar onSubmit={onSubmitSearch} />
+      {weatherData && <CurrentWeather objData={weatherData} />}
 
-      {/* <CurrentWeather objData={weatherData} />
-      <Forecast coordinates={weatherData.coords} /> */}
+      {/* <Forecast coordinates={weatherData.coords} /> */}
     </div>
   );
 }
